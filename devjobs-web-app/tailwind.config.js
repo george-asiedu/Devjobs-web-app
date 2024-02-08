@@ -14,6 +14,28 @@ module.exports = {
       gray: '#9DAEC2',
       darkGrey: '#6E8098'
     },
+    fontSize: {
+      sm: ['14px', {
+        lineHeight: '18px',
+        fontWeight: '500'
+      }],
+      base: ['16px', {
+        lineHeight: '26px',
+        fontWeight: '400'
+      }],
+      lg: ['20px', {
+        lineHeight: '24px',
+        fontWeight: '500'
+      }],
+      xl: ['24px', {
+        lineHeight: '29px',
+        fontWeight: '600'
+      }],
+      '2xl': ['28px', {
+        lineHeight: '34px',
+        fontWeight: '700'
+      }]
+    },
     extend: {},
   },
   plugins: [],
