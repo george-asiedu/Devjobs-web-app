@@ -1,7 +1,7 @@
 <div 
     class="w-[85%] h-[70px] lg:h-[80px] bg-white mx-auto -mt-10 shadow-md rounded-lg flex items-center justify-between"
 >
-    <div class="flex items-center w-full h-full px-4 border-r border-lightGrey gap-4">
+    <div class="flex items-center w-full h-full px-4 md:px-[20px] lg:px-[35px] border-r border-lightGrey gap-3 hover:cursor-pointer">
         <img 
             src="../../../assets/desktop/icon-search.svg" 
             class="hidden md:block" 
@@ -9,7 +9,7 @@
         >
         <input 
             type="text"
-            class="border-none focus:outline-none focus:text-midnight text-base p-[10px] w-[85%] overflow-hidden h-[40px] rounded-[10px]"
+            class="border-none focus:outline-none focus:text-midnight text-base p-[10px] w-[85%] overflow-hidden h-[40px] rounded-[10px] hover:cursor-pointer"
             placeholder="Filter by title..."
         >
         <img src="../../../assets/mobile/icon-filter.svg" class="md:hidden" alt="icon-filter">
@@ -20,5 +20,25 @@
             alt="icon-search"
             >
         </button>
+    </div>
+
+    <div class="hidden w-full h-full md:flex md:items-center md:px-[20px] lg:px-[35px] border-r border-lightGrey hover:cursor-pointer">
+        <img src="../../../assets/desktop/icon-location.svg" alt="icon-location">
+        <input 
+            type="text"
+            class="border-none focus:outline-none focus:text-midnight text-base p-[10px] px-[25px] w-[85%] overflow-hidden h-[40px] rounded-[10px] hover:cursor-pointer"
+            placeholder="Filter by location..."
+        >
+    </div>
+
+    <div class="hidden w-full h-full md:flex md:items-center md:px-[20px] lg:px-[35px] lg:justify-between md:gap-3 hover:cursor-pointer">
+        <div class="flex items-center bg-lightGrey h-[30px] rounded hover:bg-primary active:bg-primary">
+            <button class="flex items-center justify-center p-2">
+                <img src="../../../assets/desktop/icon-check.svg" class="w-full" alt="icon-check">
+            </button>
+        </div>
+        <h4 class="lg:hidden font-bold">Full Time</h4>
+        <h4 class="hidden lg:block font-bold">Full Time Only</h4>
+        <button class="btn-primary md:px-[16px] lg:px-[25px] md:text-sm lg:text-base">Search</button>
     </div>
 </div>

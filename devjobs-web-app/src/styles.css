@@ -31,17 +31,17 @@
 
 @layer components {
     .btn-primary {
-        @apply bg-primary text-white font-medium rounded hover:bg-secondary text-center py-[10px] px-[35px];
+        @apply bg-primary text-white font-medium rounded hover:bg-secondary text-center py-[7px] px-[35px] md:px-[28px];
     }
 
     .btn-secondary {
-        @apply bg-tertiary text-primary font-medium rounded hover:bg-accent text-center py-[10px] px-[35px];
+        @apply bg-tertiary text-primary font-medium rounded hover:bg-accent text-center py-[7px] px-[35px] md:px-[28px];
     }
 
     .toggle-btn {
         @apply w-[48px] h-6 rounded-[100px] relative bg-white transition duration-200 ease-linear border-none cursor-pointer 
         before:content-[''] before:inline-block before:w-[18px] before:h-[18px] before:bg-primary before:rounded-full 
-        before:absolute before:top-[50%] before:left-[5px] before:transition before:duration-200 before:ease-linear
+        before:absolute before:top-[50%] before:left-[5px] before:transition before:duration-200 before:ease-linear before:hover:bg-secondary
     }
 }
 
