@@ -5,8 +5,10 @@ module.exports = {
   ],
   theme: {
     colors: {
-      primary: '#9e7f66',
+      primary: '#5964E0',
       secondary: '#939BF4',
+      tertiary: '#edeffc',
+      accent: '#c5c9f4',
       darkBlue: '#19202D',
       midnight: '#121721',
       white: '#FFFFFF',
