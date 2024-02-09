@@ -1,5 +1,7 @@
-.max-w-full {
-    background-image: url('../../../assets/mobile/bg-pattern-header.svg');
-    background-position: center;
-    background-size: cover;
+.toggle-btn[data-active-theme='light']::before {
+    transform: translateY(-50%) translateX(0);
+}
+
+.toggle-btn[data-active-theme='dark']::before {
+    transform: translateY(-50%) translateX(115%);
 }
