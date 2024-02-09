@@ -1,0 +1,5 @@
+.max-w-full {
+    background-image: url('../../../assets/mobile/bg-pattern-header.svg');
+    background-position: center;
+    background-size: cover;
+}
