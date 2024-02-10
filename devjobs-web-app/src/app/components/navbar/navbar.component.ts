@@ -13,7 +13,6 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     const storedTheme = localStorage.getItem('theme');
-    console.log(storedTheme)
     this.isDark = storedTheme === 'dark';
     document.body.setAttribute('data-theme', this.isDark ? 'dark' : 'light');
   }
