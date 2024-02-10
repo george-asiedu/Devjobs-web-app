@@ -1,5 +1,26 @@
-<div class="relative jobs w-[85%] h-[300px] mx-auto my-16 shadow-md p-[16px]">
-    <div *ngFor="let jobs of allJobs">
-
+<div class="max-w-full my-16 px-[30px] md:px-16 lg:px-[96px]">
+    <div class="flex flex-wrap md:justify-between w-full">
+        <div 
+            *ngFor="let job of allJobs"
+            routerLink="/{{ job.id }}"
+            class="relative jobs flex flex-col justify-between w-full md:w-[49%] lg:w-[31.5%] h-[250px] rounded-lg mb-[56px] cursor-pointer p-6"
+        >
+            <div 
+                [style.background-color]="job.logoBackground"
+                class="absolute -top-6 rounded-[18px] w-[55px] h-[50px] flex items-center justify-center"
+            >
+                <img [src]="job.logo" alt="job.title">
+            </div>
+            <div class="flex flex-col gap-[10px] mt-[14px]">
+                <div class="flex items-center gap-2">
+                    <p class="tracking-wide">{{ job.postedAt }}</p>
+                    <span class="w-[5px] h-[5px] rounded-full bg-gray"></span>
+                    <p class="tracking-wide">{{ job.contract }}</p>
+                </div>
+                <h3 class="font-bold tracking-wide">{{ job.position }}</h3>
+                <p>{{ job.company }}</p>
+            </div>
+            <h4 class="text-primary font-bold">{{ job.location }}</h4>
+        </div>
     </div>
 </div>

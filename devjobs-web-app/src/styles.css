@@ -6,7 +6,7 @@
     html {
         font-family: 'Kumbh Sans', sans-serif;
     }   
-    /* h1 {
+    h1 {
         @apply text-2xl text-darkBlue;
     }
     h2 {
@@ -20,7 +20,7 @@
     }
     p {
         @apply text-base text-darkGrey;
-    } */
+    }
 }
 
 @layer components {
