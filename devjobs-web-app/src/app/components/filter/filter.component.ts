@@ -9,10 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './filter.component.css'
 })
 export class FilterComponent {
-  isCheck =false 
+  isChecked = false 
+  filterTitle = ''
+  filterLocation = ''
 
-  onChangeIsCheck() {
-    this.isCheck=!this.isCheck
+  onChangeIsChecked() {
+    this.isChecked=!this.isChecked
     
   }
 }
