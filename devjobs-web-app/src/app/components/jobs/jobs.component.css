@@ -5,3 +5,7 @@
 h3 {
     color: var(--color-text);
 }
+
+h3:hover {
+    color: var(--color-dark-grey);
+}
