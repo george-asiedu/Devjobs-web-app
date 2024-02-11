@@ -15,7 +15,8 @@ module.exports = {
       white: '#FFFFFF',
       lightGrey: '#F4F6F8',
       gray: '#9DAEC2',
-      darkGrey: '#6E8098'
+      darkGrey: '#6E8098',
+      error: '#ED2939'
     },
     fontSize: {
       sm: ['14px', {

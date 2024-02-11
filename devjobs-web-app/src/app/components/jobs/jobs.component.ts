@@ -13,12 +13,19 @@ import { RouterLink } from '@angular/router';
 })
 export class JobsComponent implements OnInit {
   allJobs: Jobs[] = []
+  loading: boolean = true
+  error: string = ''
 
   constructor(private allJobsService: AllJobsService) {}
 
   ngOnInit(): void {
     this.allJobsService.getJobs().subscribe((jobs) => {
       this.allJobs = jobs
-    })
+      this.loading = false
+    }),
+    (error: any) => {
+      this.error = error
+      this.loading = false
+    }
   }
 }
