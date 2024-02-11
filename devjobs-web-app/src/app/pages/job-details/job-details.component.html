@@ -82,3 +82,17 @@
         </ol>
     </div>
 </div>
+
+<div 
+        *ngIf="!loading && !error"
+        class="dets mt-10 py-[6%] px-[8%] w-full md:p-[5%]"
+    >
+        <div class="md:flex md:items-center md:justify-between">
+            <button 
+            (click)="redirect(jobDetails.website)"
+            class="btn-primary w-full"
+            >
+                Apply Now
+            </button>
+        </div>
+</div>
