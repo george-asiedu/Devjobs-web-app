@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Jobs } from '../../model/jobs';
 import { AllJobsService } from '../../service/all-jobs.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-job-details',
@@ -11,18 +12,44 @@ import { AllJobsService } from '../../service/all-jobs.service';
 })
 export class JobDetailsComponent implements OnInit {
   jobDetails: Jobs = {} as Jobs;
+  loading: boolean = false
+  error: string = ''
 
-  constructor( private allJobService: AllJobsService) {}
+  constructor( private allJobService: AllJobsService, 
+    private activatedRoute: ActivatedRoute,
+  ) {}
 
   ngOnInit(): void {
-    const jobId = '1'
-    this.allJobService.getJobDetails(jobId)
-      .subscribe(
-        (jobDetail) => {
-          console.log(jobDetail);
-          
-          this.jobDetails = jobDetail
+    this.activatedRoute.paramMap.subscribe(
+      (param) => {
+        let id: string | null = param.get('id')
+        if(id !== null) {
+          this.getJobDetails(id)
         }
-      )
+      }
+    )
+  }
+
+  getJobDetails(id: string) {
+    this.loading = true;
+    this.allJobService.getJobs().subscribe({
+      next: (jobs) => {
+        const job = jobs.find(job => job.id === id);
+        if (job) {
+          this.jobDetails = job;
+        } else {
+          this.error = 'Job not found';
+        }
+        this.loading = false;
+      },
+      error: (error) => {
+        this.error = error;
+        this.loading = false;
+      }
+    });
+  }
+
+  redirect(site: string) {
+    window.location.href = site
   }
 }
