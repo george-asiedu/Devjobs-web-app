@@ -14,19 +14,19 @@
 
     <div
         *ngIf="!loading && !error" 
-        class="relative w-full h-[220px] md:h-[150px] flex items-center flex-col md:flex-row justify-center md:justify-between text-center md:text-left gap-4 dets rounded-[6px] md:rounded-[10px] -mt-[70px] md:-mt-[80px] mb-10"
+        class="relative w-full h-[220px] md:h-[120px] flex items-center flex-col md:flex-row justify-center md:justify-between text-center md:text-left gap-4 dets rounded-[6px] md:rounded-[10px] -mt-[70px] md:-mt-[80px] mb-10"
     >
         <div 
             [style.background-color]="jobDetails.logoBackground"
-            class="absolute -top-6 rounded-[18px] md:rounded-bl-[10px] md:rounded-none w-[55px] md:w-[25%] md:relative md:top-0 h-[50px] md:h-full flex items-center justify-center"
+            class="absolute -top-6 rounded-[18px] md:rounded-bl-[10px] md:rounded-none w-[55px] md:w-[25%] lg:w-[20%] md:relative md:top-0 h-[50px] md:h-full flex items-center justify-center"
         >
-            <img [src]="jobDetails.logo" class="md:w-[50%] lg:w-[40%]" alt="job.title">
+            <img [src]="jobDetails.logo" class="md:w-[30%] lg:w-[40%]" alt="job.title">
         </div>
-        <span class="md:w-[30%] mb-3">
-            <h2 class="font-bold mb-3">{{ jobDetails.company}}</h2>
+        <span class="md:w-[30%] mb-3 md:mb-0">
+            <h3 class="font-bold mb-3 md:mb-1">{{ jobDetails.company}}</h3>
             <p>{{jobDetails.website}}</p>
         </span>
-        <button class="btn-secondary md:mr-10 md:py-[20px]" (click)="redirect(jobDetails.website)">Company Site</button>
+        <button class="btn-secondary md:mr-10 lg:py-[12px]" (click)="redirect(jobDetails.website)">Company Site</button>
     </div>
 
     <div
@@ -44,7 +44,7 @@
                 <h4 class="font-bold text-primary">{{ jobDetails.location }}</h4>
             </div>
             <button 
-                class="btn-primary md:px-[36px] md:py-[16px] md:text-lg" 
+                class="btn-primary md:py-[12px]" 
                 (click)="redirect(jobDetails.website)"
             >
                 Apply Now
@@ -70,7 +70,7 @@
                 {{ list }}
             </li>
         </ul>
-        <h2 class="font-bold">What You Will Do</h2>
+        <h3 class="font-bold">What You Will Do</h3>
         <p>{{ jobDetails.role.content }}</p>
         <ol class="text-base list-decimal list-inside">
             <li 
@@ -95,7 +95,7 @@
             </span>
             <button 
                 (click)="redirect(jobDetails.website)"
-                class="btn-primary w-full md:w-fit md:py-[14px] md:px-[32px]"
+                class="btn-primary w-full md:w-fit md:py-[12px]"
             >
                 Apply Now
             </button>

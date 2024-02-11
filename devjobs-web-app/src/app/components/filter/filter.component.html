@@ -1,7 +1,7 @@
 <div 
     class="w-[85%] h-[70px] lg:h-[80px] mx-auto -mt-10 shadow-md rounded-lg flex items-center justify-between"
 >
-    <div class="flex items-center w-full h-full px-4 md:px-[20px] lg:px-[35px] md:border-r border-darkGrey gap-3 hover:cursor-pointer">
+    <div class="flex items-center w-full h-full px-4 md:px-[20px] lg:px-[35px] gap-3 hover:cursor-pointer">
         <img 
             src="../../../assets/desktop/icon-search.svg" 
             class="hidden md:block" 
@@ -22,7 +22,7 @@
         </button>
     </div>
 
-    <div class="hidden w-full h-full md:flex md:items-center md:px-[20px] lg:px-[35px] border-r border-darkGrey hover:cursor-pointer">
+    <div class="hidden w-full h-full md:flex md:items-center md:px-[20px] lg:px-[35px] border-l hover:cursor-pointer">
         <img src="../../../assets/desktop/icon-location.svg" alt="icon-location">
         <input 
             type="text"
@@ -31,7 +31,7 @@
         >
     </div>
 
-    <div class="hidden w-full h-full md:flex md:items-center md:px-[20px] lg:px-[35px] lg:justify-between md:justify-between hover:cursor-pointer">
+    <div class="hidden w-full h-full md:flex md:items-center md:px-[20px] lg:px-[35px] lg:justify-between md:justify-between border-l hover:cursor-pointer">
         <button 
             [ngClass]="!isChecked? 'btn':'btn_active'" (click)="onChangeIsChecked()"
         >
@@ -39,6 +39,6 @@
         </button>
         <p class="lg:hidden font-bold w-fit">Full Time</p>
         <p class="hidden lg:block font-bold w-fit">Full Time Only</p>
-        <button class="btn-primary md:px-[12px] lg:px-[25px]">Search</button>
+        <button class="btn-primary md:px-[12px] lg:px-[20px] lg:py-[8px]">Search</button>
     </div>
 </div>

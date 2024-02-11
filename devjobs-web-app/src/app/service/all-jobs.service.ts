@@ -32,12 +32,4 @@ export class AllJobsService {
       'Something went wrong while fetching jobs data. Please try again later.'
     )
   }
-
-  getJobDetails(id: string): Observable<Jobs> {
-    const detailsIdUrl = `${this.devjobsUrl}/${id}`
-    return this.http.get<Jobs>(detailsIdUrl)
-      .pipe(
-        catchError(this.handleError)
-      )
-  }
 }

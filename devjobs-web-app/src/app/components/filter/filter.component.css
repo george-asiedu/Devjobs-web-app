@@ -18,7 +18,7 @@ input {
     border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-    background-color: var(--color-grey);
+    background-color: var(--color-checkbox);
 }
 
 .btn:hover {
@@ -35,6 +35,6 @@ input {
     background-color: var(--color-light-violet);
 }
 
-p {
-    color: var(--color-text);
+.border-l {
+    border-color: var(--color-checkbox);
 }

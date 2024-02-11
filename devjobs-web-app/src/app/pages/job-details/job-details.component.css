@@ -9,3 +9,13 @@ h2, h3 {
 .info {
     background-color: var(--background-color-elements);
 }
+
+.btn-secondary {
+    background-color: var(--background-color-btn-2);
+    color: var( --color-btn-2);
+}
+
+.btn-secondary:hover {
+    background-color: var(--background-color-btn-2-hover);
+    color: var( --color-btn-2);
+}
