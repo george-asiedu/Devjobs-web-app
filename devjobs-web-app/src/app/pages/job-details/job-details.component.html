@@ -54,5 +54,31 @@
         <p>
             {{ jobDetails.description }}
         </p>
+
+        <h3 class="font-bold">
+            Requirements
+        </h3>
+
+        <p>
+            {{ jobDetails.requirements.content }}
+        </p>
+        <ul class="text-base list-disc list-inside">
+            <li 
+                *ngFor="let list of jobDetails.requirements.items"
+                class="mb-4 text-darkGrey marker:text-primary"
+            >
+                {{ list }}
+            </li>
+        </ul>
+        <h2 class="font-bold">What You Will Do</h2>
+        <p>{{ jobDetails.role.content }}</p>
+        <ol class="text-base list-decimal list-inside">
+            <li 
+                class="mb-4 text-darkGrey marker:text-primary"
+                *ngFor="let list of jobDetails.role.items"
+            >
+                {{ list }}
+            </li>
+        </ol>
     </div>
 </div>
