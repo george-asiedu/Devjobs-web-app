@@ -30,6 +30,6 @@ export class AllJobsService {
     }
     return throwError(()=> 
       'Something went wrong while fetching jobs data. Please try again later.'
-      )
+    )
   }
 }

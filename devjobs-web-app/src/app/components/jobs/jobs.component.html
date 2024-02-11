@@ -11,7 +11,7 @@
     >
         Something went wrong... try again
     </div>
-    <div class="flex flex-wrap md:justify-between w-full">
+    <div class="flex flex-wrap md:justify-between w-full h-auto">
         <div 
             *ngFor="let job of allJobs"
             routerLink="/{{ job.id }}"
@@ -34,5 +34,9 @@
             </div>
             <h4 class="text-primary font-bold">{{ job.location }}</h4>
         </div>
+    </div>
+
+    <div class="flex items-center justify-center">
+        <button class="btn-primary">Load More</button>
     </div>
 </div>
