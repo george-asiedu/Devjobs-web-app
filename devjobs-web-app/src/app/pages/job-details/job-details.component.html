@@ -1,1 +1,31 @@
-<p>job-details works!</p>
+<div class="max-w-full w-[85%] mt-10 h-auto mx-auto">
+    <div 
+        class="w-full tracking-wider text-center text-primary"
+        *ngIf="loading"
+    >
+        Loading... please wait
+    </div>
+    <div 
+        class="w-full my-20 text-center text-error"
+        *ngIf="error && !loading"
+    >
+        Something went wrong... try again
+    </div>
+
+    <div
+        *ngIf="!loading && !error" 
+        class="relative h-[200px] flex items-center flex-col justify-center md:justify-between text-center gap-4 dets rounded-md -mt-[70px]"
+    >
+        <div 
+            [style.background-color]="jobDetails.logoBackground"
+            class="absolute -top-6 rounded-[18px] w-[55px] h-[50px] flex items-center justify-center"
+        >
+            <img [src]="jobDetails.logo" alt="job.title">
+        </div>
+        <span class="">
+            <h3 class="font-bold mb-3">{{ jobDetails.company}}</h3>
+            <p>{{jobDetails.website}}</p>
+        </span>
+        <button class="btn-secondary" (click)="redirect(jobDetails.website)">Company Site</button>
+    </div>
+</div>
