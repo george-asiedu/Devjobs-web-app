@@ -24,7 +24,7 @@
         </div>
         <span class="md:w-[30%] mb-3 md:mb-0">
             <h3 class="font-bold mb-3 md:mb-1">{{ jobDetails.company}}</h3>
-            <p>{{jobDetails.website}}</p>
+            <p>{{ extractDomainName(jobDetails.website) }}</p>
         </span>
         <button class="btn-secondary md:mr-10 lg:py-[12px]" (click)="redirect(jobDetails.website)">Company Site</button>
     </div>
