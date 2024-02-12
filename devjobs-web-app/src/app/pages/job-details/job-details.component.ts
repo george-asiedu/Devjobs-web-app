@@ -53,4 +53,9 @@ export class JobDetailsComponent implements OnInit {
   redirect(site: string) {
     window.location.href = site
   }
+
+  extractDomainName(url: string): string {
+    const domain = url.split('//')[1].split('/')[0];
+    return domain;
+  }
 }
