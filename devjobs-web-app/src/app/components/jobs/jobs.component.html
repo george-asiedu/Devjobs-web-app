@@ -1,4 +1,4 @@
-<div class="max-w-full my-16 px-[30px] md:px-16 lg:px-[96px] xl:px-[120px]">
+<div class="max-w-full my-16 px-[30px] md:px-16 lg:px-[96px] xl:px-[145px]">
     <div 
         class="w-full tracking-wider text-center text-primary"
         *ngIf="loading"
@@ -15,7 +15,7 @@
         <div 
             *ngFor="let job of allJobs"
             routerLink="/{{ job.id }}"
-            class="relative jobs flex flex-col justify-between w-full md:w-[49%] lg:w-[31.5%] h-[250px] rounded-lg mb-[56px] cursor-pointer p-6"
+            class="relative jobs flex flex-col justify-between w-full md:w-[49%] lg:w-[31.5%] h-[250px] rounded-lg mb-[56px] cursor-pointer p-6 hover:shadow-md"
         >
             <div 
                 [style.background-color]="job.logoBackground"
