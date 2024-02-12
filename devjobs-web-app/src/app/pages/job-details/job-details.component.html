@@ -74,10 +74,10 @@
         <p>{{ jobDetails.role.content }}</p>
         <ol class="text-base list-decimal list-inside">
             <li 
-                class="mb-4 text-darkGrey marker:text-primary"
+                class="text-darkGrey mb-4 marker:text-primary"
                 *ngFor="let list of jobDetails.role.items"
             >
-                {{ list }}
+                <p class="inline ml-[10px]">{{ list }}</p>
             </li>
         </ol>
     </div>
