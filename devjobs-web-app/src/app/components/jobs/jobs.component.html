@@ -15,7 +15,7 @@
         <div 
             *ngFor="let job of allJobs"
             routerLink="/{{ job.id }}"
-            class="relative jobs flex flex-col justify-between w-full md:w-[49%] lg:w-[31.5%] h-[250px] rounded-lg mb-[56px] cursor-pointer p-6 hover:shadow-md"
+            class="relative jobs flex flex-col justify-between w-full md:w-[49%] lg:w-[31.5%] h-[250px] rounded-lg mb-[56px] cursor-pointer p-6 md:p-8 hover:shadow-md"
         >
             <div 
                 [style.background-color]="job.logoBackground"
