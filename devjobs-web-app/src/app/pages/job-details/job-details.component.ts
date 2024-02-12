@@ -44,8 +44,8 @@ export class JobDetailsComponent implements OnInit {
         this.loading = false;
       },
       error: (error) => {
-        this.error = error;
-        this.loading = false;
+        this.error = error
+        this.loading = false
       }
     });
   }

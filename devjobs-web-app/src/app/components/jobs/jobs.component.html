@@ -1,4 +1,4 @@
-<div class="max-w-full my-16 px-[30px] md:px-16 lg:px-[96px]">
+<div class="max-w-full my-16 px-[30px] md:px-16 lg:px-[96px] xl:px-[120px]">
     <div 
         class="w-full tracking-wider text-center text-primary"
         *ngIf="loading"
@@ -9,7 +9,7 @@
         class="w-full my-20 text-center text-error"
         *ngIf="error && !loading"
     >
-        Something went wrong... try again
+        Something went wrong... failed to fetch resources
     </div>
     <div class="flex flex-wrap md:justify-between w-full h-auto">
         <div 
