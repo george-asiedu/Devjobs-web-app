@@ -32,4 +32,6 @@ export class AllJobsService {
       'Something went wrong while fetching jobs data. Please try again later.'
     )
   }
+
+  
 }
