@@ -5,3 +5,19 @@
 .toggle-btn[data-active-theme='dark']::before {
     transform: translateY(-50%) translateX(115%);
 }
+
+header {
+    background-image: url('../../../assets/bg-pattern-header-mb.svg');
+}
+
+@media (min-width: 768px) {
+    header {
+        background-image: url('../../../assets/bg-pattern-header-tb.svg');
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        background-image: url('../../../assets/bg-pattern-header-lg.svg');
+    }
+}
