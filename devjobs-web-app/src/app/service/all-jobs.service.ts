@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, throwError } from 'rxjs';
+import { BehaviorSubject, Observable, catchError, throwError } from 'rxjs';
 import { Jobs } from '../model/jobs';
 
 @Injectable({
@@ -9,6 +9,7 @@ import { Jobs } from '../model/jobs';
 export class AllJobsService {
 
   private devjobsUrl = 'http://localhost:3000/jobs'
+  // private JobItems: Jobs[] = []
 
   constructor(private http: HttpClient) { }
 
@@ -33,5 +34,7 @@ export class AllJobsService {
     )
   }
 
-  
+  // getJobsById(id: string): Jobs | undefined {
+  //   return this.JobItems.find((jobs) => jobs.id === id)
+  // }
 }
