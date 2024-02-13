@@ -1,5 +1,5 @@
 <div 
-    class="w-[85%] h-[70px] lg:h-[80px] mx-auto -mt-10 shadow-md rounded-lg flex items-center justify-between"
+    class="w-[85%] h-[70px] lg:h-[80px] mx-auto -mt-10 shadow-md rounded-lg flex items-center justify-between filter"
 >
     <div class="flex items-center w-full h-full px-4 md:px-[20px] lg:px-[35px] gap-3 hover:cursor-pointer">
         <img 
@@ -9,7 +9,6 @@
         >
         <input 
             type="text"
-            [(ngModel)]="filterTitle"
             class="focus:outline-none text-base p-[10px] w-[85%] overflow-hidden h-[40px] rounded-[10px] hover:cursor-pointer caret-primary"
             placeholder="Filter by title..."
         >
@@ -27,21 +26,21 @@
         <img src="../../../assets/desktop/icon-location.svg" alt="icon-location">
         <input 
             type="text"
-            [(ngModel)]="filterLocation"
             class="border-none focus:outline-none text-base p-[10px] px-[25px] w-[85%] overflow-hidden h-[40px] rounded-[10px] hover:cursor-pointer caret-primary"
             placeholder="Filter by location..."
         >
     </div>
 
     <div class="hidden w-full h-full md:flex md:items-center md:px-[20px] lg:px-[35px] lg:justify-between md:justify-between border-l hover:cursor-pointer">
-        <button 
-            [ngClass]="{'btn_active': isChecked}" (click)="onChangeIsChecked()"
-            class="btn"
+        <button  
+            class="btn" 
+            [class.btn_active]="isChecked"
+            
         >
             <img *ngIf="isChecked" src="../../../assets/desktop/icon-check.svg" alt="icon-check"/>        
         </button>
         <p class="lg:hidden font-bold w-fit">Full Time</p>
         <p class="hidden lg:block font-bold w-fit">Full Time Only</p>
-        <button class="btn-primary md:px-[12px] lg:px-[20px] lg:py-[8px]" (click)="onSearch()">Search</button>
+        <button class="btn-primary md:px-[12px] lg:px-[20px] lg:py-[8px]">Search</button>
     </div>
 </div>
