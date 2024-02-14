@@ -38,13 +38,6 @@
     </div>
 
     <div class="hidden w-full h-full md:flex md:items-center md:px-[20px] lg:px-[35px] lg:justify-between md:justify-between border-l hover:cursor-pointer">
-        <!-- <button  
-            class="btn" 
-            [class.btn_active]="isChecked"
-            (click)="isChecked ? filterJobs() : onCheckChange()"
-        >
-            <img *ngIf="isChecked" src="../../../assets/desktop/icon-check.svg" alt="icon-check">      
-        </button> -->
         <input type="checkbox" [(ngModel)]="fillterFullTime" (change)="filterJobs()">
         <p class="lg:hidden font-bold w-fit">Full Time</p>
         <p class="hidden lg:block font-bold w-fit">Full Time Only</p>
@@ -57,7 +50,9 @@
     </div>
 </div>
 
-<div class="w-[85%] mx-auto my-16">
+<app-modal></app-modal>
+
+<!-- <div class="w-[85%] mx-auto my-16">
     <div 
         class="w-full tracking-wider text-center text-primary"
         *ngIf="loading"
@@ -101,4 +96,4 @@
     >
         <button class="btn-primary">Load More</button>
     </div>
-</div>
+</div> -->
