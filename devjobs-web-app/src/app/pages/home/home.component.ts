@@ -4,11 +4,12 @@ import { AllJobsService } from '../../service/all-jobs.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ModalComponent } from '../../components/modal/modal.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink, FormsModule],
+  imports: [CommonModule, RouterLink, FormsModule, ModalComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
