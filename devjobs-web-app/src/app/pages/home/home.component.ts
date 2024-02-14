@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { FilterComponent } from '../../components/filter/filter.component';
-import { JobsComponent } from '../../components/jobs/jobs.component';
 import { Jobs } from '../../model/jobs';
 import { AllJobsService } from '../../service/all-jobs.service';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [FilterComponent, JobsComponent, CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, FormsModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -18,6 +17,10 @@ export class HomeComponent implements OnInit {
   loading: boolean = true
   error: string = ''
   filteredJobs: Jobs[] = [];
+  filterTitle: string = ''
+  filterLocation: string = ''
+  fillterFullTime: boolean = false
+  isChecked: boolean = false
 
   constructor (private allJobsService: AllJobsService) {}
 
@@ -29,9 +32,24 @@ export class HomeComponent implements OnInit {
         this.filteredJobs = job
       }
     ), 
-    ((err: string) => {
+    ((err: any) => {
       this.error = err
       this.loading = false
     })
+  }
+
+  filterJobs(): void {
+    this.filteredJobs = this.jobs.filter(job => {
+      return job.position.toLowerCase().includes(this.filterTitle.toLowerCase()) && 
+            job.location.toLowerCase().includes(this.filterLocation.toLowerCase()) && 
+            (!this.fillterFullTime || job.contract.toLowerCase() === 'full time')
+    })
+  }
+  
+  onCheckChange() {
+    this.isChecked = !this.isChecked;
+    if(!this.isChecked) {
+      this.filterJobs()
+    }
   }
 }
