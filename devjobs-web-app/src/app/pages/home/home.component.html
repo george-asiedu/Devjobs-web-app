@@ -11,9 +11,12 @@
             type="text"
             class="focus:outline-none text-base p-[10px] w-[85%] overflow-hidden h-[40px] rounded-[10px] hover:cursor-pointer caret-primary"
             placeholder="Filter by title..."
+            [(ngModel)]="filterTitle"
+            name="filterTitle"
+            (input)="filterJobs()" 
         >
         <img src="../../../assets/mobile/icon-filter.svg" class="md:hidden" alt="icon-filter">
-        <button class="bg-primary rounded-md p-[8px] text-white md:hidden hover:bg-secondary">
+        <button class="bg-primary rounded-md p-[8px] text-white md:hidden hover:bg-secondary" (click)="filterJobs()">
             <img 
             src="../../../assets/desktop/icon-search - white.svg" 
             class="flex items-center fill-white" 
@@ -28,14 +31,29 @@
             type="text"
             class="border-none focus:outline-none text-base p-[10px] px-[25px] w-[85%] overflow-hidden h-[40px] rounded-[10px] hover:cursor-pointer caret-primary"
             placeholder="Filter by location..."
+            [(ngModel)]="filterLocation"
+            name="filterLocation" 
+            (input)="filterJobs()"   
         >
     </div>
 
     <div class="hidden w-full h-full md:flex md:items-center md:px-[20px] lg:px-[35px] lg:justify-between md:justify-between border-l hover:cursor-pointer">
-       
+        <!-- <button  
+            class="btn" 
+            [class.btn_active]="isChecked"
+            (click)="isChecked ? filterJobs() : onCheckChange()"
+        >
+            <img *ngIf="isChecked" src="../../../assets/desktop/icon-check.svg" alt="icon-check">      
+        </button> -->
+        <input type="checkbox" [(ngModel)]="fillterFullTime" (change)="filterJobs()">
         <p class="lg:hidden font-bold w-fit">Full Time</p>
         <p class="hidden lg:block font-bold w-fit">Full Time Only</p>
-        <button class="btn-primary md:px-[12px] lg:px-[20px] lg:py-[8px]">Search</button>
+        <button 
+            class="btn-primary md:px-[12px] lg:px-[20px] lg:py-[8px]"
+            (click)="filterJobs()"
+        >
+            Search
+        </button>
     </div>
 </div>
 
@@ -52,9 +70,9 @@
     >
         Something went wrong... failed to fetch resources
     </div>
-    <div class="flex flex-wrap md:justify-between w-full h-auto">
+    <div *ngIf="filterJobs" class="flex flex-wrap md:justify-between w-full h-auto">
         <div 
-            *ngFor="let job of jobs"
+            *ngFor="let job of filteredJobs"
             routerLink="/{{ job.id }}"
             class="relative jobs flex flex-col justify-between w-full md:w-[49%] lg:w-[31.5%] h-[250px] rounded-lg mb-[56px] cursor-pointer p-6 md:p-8 hover:shadow-md"
         >
@@ -84,10 +102,3 @@
         <button class="btn-primary">Load More</button>
     </div>
 </div>
-<!-- <button  
-class="btn" 
-[class.btn_active]="isChecked"
-
->
-<img *ngIf="isChecked" src="../../../assets/desktop/icon-check.svg" alt="icon-check"/>        
-</button> -->
