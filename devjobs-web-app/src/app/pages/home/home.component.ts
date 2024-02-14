@@ -46,11 +46,4 @@ export class HomeComponent implements OnInit {
             (!this.fillterFullTime || job.contract.toLowerCase() === 'full time')
     })
   }
-  
-  onCheckChange() {
-    this.isChecked = !this.isChecked;
-    if(!this.isChecked) {
-      this.filterJobs()
-    }
-  }
 }

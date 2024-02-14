@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, catchError, throwError } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { Jobs } from '../model/jobs';
 
 @Injectable({
@@ -9,7 +9,6 @@ import { Jobs } from '../model/jobs';
 export class AllJobsService {
 
   private devjobsUrl = 'http://localhost:3000/jobs'
-  // private JobItems: Jobs[] = []
 
   constructor(private http: HttpClient) { }
 
@@ -33,8 +32,4 @@ export class AllJobsService {
       'Something went wrong while fetching jobs data. Please try again later.'
     )
   }
-
-  // getJobsById(id: string): Jobs | undefined {
-  //   return this.JobItems.find((jobs) => jobs.id === id)
-  // }
 }
