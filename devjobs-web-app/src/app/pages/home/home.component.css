@@ -7,32 +7,8 @@ input {
     color: var(--color-text);
 }
 
-.btn,
-.btn_active {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 27px;
-    height: 27px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-    background-color: var(--color-checkbox);
-}
-
-.btn:hover {
-    transition: 0.3s;
-    background-color: var(--color-light-violet);
-}
-
-.btn_active {
-    background-color: var(--color-violet);
-}
-
-.btn_active:hover {
-    transition: 0.3s;
-    background-color: var(--color-light-violet);
+.icon {
+    filter: var(--filter);
 }
 
 .border-l {
@@ -43,7 +19,7 @@ input {
     background-color: var(--background-color-elements);
 }
 
-h3 {
+h3, h4 {
     color: var(--color-text);
 }
 
