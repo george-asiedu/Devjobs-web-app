@@ -1,5 +1,8 @@
-<div class="absolute top-0 bottom-0 left-0 right-0 h-screen md:hidden">
-    <div class="absolute overflow-hidden top-[35%] left-[8%] w-[85%] h-[230px] rounded-[10px] modal-bg">
+<div class="absolute top-0 bottom-0 left-0 right-0 h-screen z-10 md:hidden">
+    <span class="bg-close absolute top-[28%] right-[8%] w-[30px] h-[30px] rounded-[10px] flex items-center justify-center cursor-pointer" (click)="allJobsService.isModalOpen = false">
+        <img src="../../../assets/mobile/icon-close.svg" class="w-[45%]" alt="icon-close">
+    </span>
+    <div class="absolute overflow-hidden top-[35%] left-[8%] w-[85%] h-[220px] rounded-[10px] modal-bg">
         <div class="w-full h-[70px] py-6 px-7 border-b flex items-center gap-3 mb-3">
             <img src="../../../assets/desktop/icon-location.svg" alt="icon-location">
             <input 
@@ -13,7 +16,7 @@
             <h3>Full Time Only</h3>
         </div>
         <div class="px-7">
-            <button class="btn-primary w-full mt-3 py-[15px] rounded-[7px]">Search</button>
+            <button class="btn-primary w-full mt-3 py-[10px] rounded-[7px]">Search</button>
         </div>
     </div>
 </div>
