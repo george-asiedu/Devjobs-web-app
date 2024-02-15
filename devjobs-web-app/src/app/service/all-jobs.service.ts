@@ -9,6 +9,7 @@ import { Jobs } from '../model/jobs';
 export class AllJobsService {
 
   private devjobsUrl = 'http://localhost:3000/jobs'
+  public isModalOpen: boolean = false 
 
   constructor(private http: HttpClient) { }
 
