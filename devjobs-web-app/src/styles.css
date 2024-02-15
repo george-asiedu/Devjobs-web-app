@@ -47,8 +47,7 @@
     --color-white: #fff;
     --color-light-grey: #f4f6f8;
     --color-grey: #9daec2;
-    --color-dark-grey: #6e8098;
-   
+    --color-dark-grey: #6e8098;  
 }
 
 body {
@@ -76,4 +75,5 @@ body[data-theme='dark'] {
     --background-color-btn-2: #303642;
     --background-color-btn-2-hover: #696e76;
     --color-btn-2: var(--color-white);
+    --filter: brightness(0) invert(1);
 }
