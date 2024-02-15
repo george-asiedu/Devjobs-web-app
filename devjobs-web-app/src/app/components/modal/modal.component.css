@@ -18,3 +18,11 @@ input {
 h3 {
     color: var(--color-text);
 }
+
+.bg-close {
+    background-color: var(--color-checkbox);
+}
+
+.bg-close:hover {
+    background-color: #9daec2;
+}
