@@ -15,8 +15,8 @@
             name="filterTitle"
             (input)="filterJobs()" 
         >
-        <img src="../../../assets/mobile/icon-filter.svg" (click)="allJobsService.isModalOpen = true" class="md:hidden" alt="icon-filter">
-        <button class="bg-primary rounded-md p-[8px] text-white md:hidden hover:bg-secondary" (click)="filterJobs()">
+        <img src="../../../assets/mobile/icon-filter.svg" (click)="allJobsService.isModalOpen = true" class="md:hidden icon" alt="icon-filter">
+        <button class="bg-primary rounded-md p-[8px] text-white md:hidden hover:bg-secondary">
             <img 
             src="../../../assets/desktop/icon-search - white.svg" 
             class="flex items-center fill-white" 
@@ -25,7 +25,7 @@
         </button>
     </div>
 
-    <div class="hidden w-full h-full md:flex md:items-center md:px-[20px] lg:px-[35px] border-l hover:cursor-pointer">
+    <div class="hidden w-full h-full md:flex md:items-center md:px-[20px] lg:px-[35px] border-l hover:cursor-pointer gap-1">
         <img src="../../../assets/desktop/icon-location.svg" alt="icon-location">
         <input 
             type="text"
@@ -38,9 +38,14 @@
     </div>
 
     <div class="hidden w-full h-full md:flex md:items-center md:px-[20px] lg:px-[35px] lg:justify-between md:justify-between border-l hover:cursor-pointer">
-        <input type="checkbox" [(ngModel)]="fillterFullTime" (change)="filterJobs()">
-        <p class="lg:hidden font-bold w-fit">Full Time</p>
-        <p class="hidden lg:block font-bold w-fit">Full Time Only</p>
+        <input 
+            type="checkbox" 
+            [(ngModel)]="fillterFullTime" 
+            (change)="filterJobs()"
+            class="cursor-pointer"
+        >
+        <h4 class="lg:hidden font-bold w-fit">Full Time</h4>
+        <h4 class="hidden lg:block font-bold w-fit">Full Time Only</h4>
         <button 
             class="btn-primary md:px-[12px] lg:px-[20px] lg:py-[8px]"
             (click)="filterJobs()"
@@ -88,12 +93,14 @@
         </div>
     </div>
 
-    <div
-        *ngIf="!loading && !error" 
-        class="flex items-center justify-center"
-    >
-        <button class="btn-primary">Load More</button>
+    <div *ngIf="filterJobs">
+        <div
+            *ngIf="!loading && !error" 
+            class="flex items-center justify-center"
+        >
+            <button class="btn-primary">Load More</button>
+        </div>
     </div>
 </div>
 
-<app-modal *ngIf="allJobsService.isModalOpen"></app-modal>
+<app-modal *ngIf="allJobsService.isModalOpen" (filterApplied)="applyFilters($event)"></app-modal>
