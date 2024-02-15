@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
   fillterFullTime: boolean = false
   isChecked: boolean = false
 
-  constructor (private allJobsService: AllJobsService) {}
+  constructor (public allJobsService: AllJobsService) {}
 
   ngOnInit(): void {
     this.allJobsService.getJobs().subscribe(
