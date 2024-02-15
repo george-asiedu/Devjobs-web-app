@@ -15,7 +15,7 @@
             name="filterTitle"
             (input)="filterJobs()" 
         >
-        <img src="../../../assets/mobile/icon-filter.svg" class="md:hidden" alt="icon-filter">
+        <img src="../../../assets/mobile/icon-filter.svg" (click)="allJobsService.isModalOpen = true" class="md:hidden" alt="icon-filter">
         <button class="bg-primary rounded-md p-[8px] text-white md:hidden hover:bg-secondary" (click)="filterJobs()">
             <img 
             src="../../../assets/desktop/icon-search - white.svg" 
@@ -50,9 +50,7 @@
     </div>
 </div>
 
-<app-modal></app-modal>
-
-<!-- <div class="w-[85%] mx-auto my-16">
+<div class="w-[85%] mx-auto my-16">
     <div 
         class="w-full tracking-wider text-center text-primary"
         *ngIf="loading"
@@ -96,4 +94,6 @@
     >
         <button class="btn-primary">Load More</button>
     </div>
-</div> -->
+</div>
+
+<app-modal *ngIf="allJobsService.isModalOpen"></app-modal>
