@@ -21,7 +21,6 @@ export class HomeComponent implements OnInit {
   filterTitle: string = ''
   filterLocation: string = ''
   fillterFullTime: boolean = false
-  isChecked: boolean = false
 
   constructor (public allJobsService: AllJobsService) {}
 
@@ -41,9 +40,16 @@ export class HomeComponent implements OnInit {
 
   filterJobs(): void {
     this.filteredJobs = this.jobs.filter(job => {
-      return job.position.toLowerCase().includes(this.filterTitle.toLowerCase()) && 
-            job.location.toLowerCase().includes(this.filterLocation.toLowerCase()) && 
-            (!this.fillterFullTime || job.contract.toLowerCase() === 'full time')
+      const titleMatch = job.position.toLowerCase().includes(this.filterTitle.toLowerCase());
+      const locationMatch = job.location.toLowerCase().includes(this.filterLocation.toLowerCase());
+      const fullTimeMatch = !this.fillterFullTime || job.contract.toLowerCase() === 'full time';
+      return titleMatch && locationMatch && fullTimeMatch;
     })
+  }
+
+  applyFilters(filters: { location: string, fullTime: boolean}): void {
+    this.filterLocation = filters.location
+    this.fillterFullTime = filters.fullTime
+    this.filterJobs()
   }
 }
