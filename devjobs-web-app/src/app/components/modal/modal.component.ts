@@ -14,14 +14,18 @@ export class ModalComponent {
   fillterFullTime: boolean = false
   showModal: boolean = false
 
-  constructor(private allJobsService: AllJobsService) {}
+  constructor(public allJobsService: AllJobsService) {}
 
   setModalOpen() {
     this.showModal = true
   }
 
-  filterJobs() {
-    
+  setModalClose() {
+    this.showModal = false
+  }
+
+  applyFilterJobs() {
+
   }
 }
 
