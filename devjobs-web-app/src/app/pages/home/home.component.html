@@ -12,15 +12,17 @@
             class="focus:outline-none text-base p-[10px] w-[85%] overflow-hidden h-[40px] rounded-[10px] hover:cursor-pointer caret-primary"
             placeholder="Filter by title..."
             [(ngModel)]="filterTitle"
-            name="filterTitle"
-            (input)="filterJobs()" 
+            name="filterTitle"            
         >
         <img src="../../../assets/mobile/icon-filter.svg" (click)="allJobsService.isModalOpen = true" class="md:hidden icon" alt="icon-filter">
-        <button class="bg-primary rounded-md p-[8px] text-white md:hidden hover:bg-secondary">
+        <button 
+            class="bg-primary rounded-md p-[8px] text-white md:hidden hover:bg-secondary" 
+            (click)="filterJobs()"
+        >
             <img 
-            src="../../../assets/desktop/icon-search - white.svg" 
-            class="flex items-center fill-white" 
-            alt="icon-search"
+                src="../../../assets/desktop/icon-search - white.svg" 
+                class="flex items-center" 
+                alt="icon-search"
             >
         </button>
     </div>
@@ -32,22 +34,23 @@
             class="border-none focus:outline-none text-base p-[10px] px-[25px] w-[85%] overflow-hidden h-[40px] rounded-[10px] hover:cursor-pointer caret-primary"
             placeholder="Filter by location..."
             [(ngModel)]="filterLocation"
-            name="filterLocation" 
-            (input)="filterJobs()"   
+            name="filterLocation"   
         >
     </div>
 
-    <div class="hidden w-full h-full md:flex md:items-center md:px-[20px] lg:px-[35px] lg:justify-between md:justify-between border-l hover:cursor-pointer">
-        <input 
-            type="checkbox" 
-            [(ngModel)]="fillterFullTime" 
-            (change)="filterJobs()"
-            class="cursor-pointer"
-        >
-        <h4 class="lg:hidden font-bold w-fit">Full Time</h4>
-        <h4 class="hidden lg:block font-bold w-fit">Full Time Only</h4>
+    <div class="hidden w-full h-full md:flex md:items-center md:px-[20px] lg:px-[35px] md:justify-between border-l hover:cursor-pointer">
+        <div class="flex items-center gap-5">
+            <input 
+                type="checkbox"
+                class="peer relative appearance-none w-6 h-6 border rounded cursor-pointer focus:outline-none checked:bg-primary after:content-[''] 
+                    after:w-full after:h-full after:absolute after:left-0 after:top-0 after:bg-no-repeat after:bg-center after:bg-[length:15px]"
+                [(ngModel)]="fillterFullTime"
+            >
+            <h4 class="lg:hidden font-bold w-fit tracking-wide">Full Time</h4>
+            <h4 class="hidden lg:block font-bold w-fit tracking-wide">Full Time Only</h4>
+        </div>
         <button 
-            class="btn-primary md:px-[12px] lg:px-[20px] lg:py-[8px]"
+            class="btn-primary md:px-[12px] lg:px-[35px] lg:py-[12px]"
             (click)="filterJobs()"
         >
             Search
@@ -76,7 +79,7 @@
         >
             <div 
                 [style.background-color]="job.logoBackground"
-                class="absolute -top-6 rounded-[18px] w-[55px] h-[50px] flex items-center justify-center"
+                class="absolute -top-6 rounded-[16px] w-[55px] h-[50px] flex items-center justify-center"
             >
                 <img [src]="job.logo" alt="job.title">
             </div>
