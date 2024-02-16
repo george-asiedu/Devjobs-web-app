@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: 'Kumbh Sans', sans-serif;
+    }   
+    h1 {
+        @apply text-2xl text-darkBlue;
+    }
+    h2 {
+        @apply text-xl text-darkBlue;
+    }
+    h3 {
+        @apply text-lg text-darkBlue;
+    }
+    h4 {
+       @apply text-sm text-darkBlue; 
+    }
+    p {
+        @apply text-base text-darkGrey;
+    }
+}
+
+@layer components {
+    .btn-primary {
+        @apply bg-primary text-white font-medium rounded-[5px] hover:bg-secondary text-center py-[10px] px-[35px] md:px-[28px];
+    }
+
+    .btn-secondary {
+        @apply bg-tertiary text-primary font-medium rounded-[5px] hover:bg-accent text-center py-[10px] px-[35px] md:px-[28px];
+    }
+
+    .toggle-btn {
+        @apply w-[48px] h-6 rounded-[100px] relative bg-white transition duration-200 ease-linear border-none cursor-pointer 
+        before:content-[''] before:inline-block before:w-[18px] before:h-[18px] before:bg-primary before:rounded-full 
+        before:absolute before:top-[50%] before:left-[5px] before:transition before:duration-200 before:ease-linear before:hover:bg-secondary
+    }
+}
+
+:root {
+    --color-violet: #5964e0;
+    --color-light-violet: #939bf4;
+    --color-very-dark-blue: #19202d;
+    --color-midnight: #121721;
+    --color-white: #fff;
+    --color-light-grey: #f4f6f8;
+    --color-grey: #9daec2;
+    --color-dark-grey: #6e8098;  
+}
+
+body {
+    background-color: var(--color-light-grey)
+}
+body[data-theme='dark'] {
+    background-color: var(--color-midnight);
+}
+
+body[data-theme='light'] {
+    --background-color-app: var(--color-light-grey);
+    --background-color-elements: var(--color-white);
+    --color-text: var(--color-very-dark-blue);
+    --color-checkbox: #e7e8e9;
+    --background-color-btn-2: #eeeffc;
+    --background-color-btn-2-hover: #c5c9f4;
+    --color-btn-2: var(--color-violet);
+}
+  
+body[data-theme='dark'] {
+    --background-color-app: var(--color-midnight);
+    --background-color-elements: var(--color-very-dark-blue);
+    --color-text: var(--color-white);
+    --color-checkbox: #313743;
+    --background-color-btn-2: #303642;
+    --background-color-btn-2-hover: #696e76;
+    --color-btn-2: var(--color-white);
+    --filter: brightness(0) invert(1);
+}

@@ -1,0 +1,43 @@
+.filter {
+    background-color: var(--background-color-elements);
+}
+
+input {
+    background-color: var(--background-color-elements);
+    color: var(--color-text);
+}
+
+.icon {
+    filter: var(--filter);
+}
+
+.border-l {
+    border-color: var(--color-checkbox);
+}
+
+.jobs {
+    background-color: var(--background-color-elements);
+}
+
+h3, h4 {
+    color: var(--color-text);
+}
+
+h3:hover {
+    color: var(--color-dark-grey);
+}
+
+input[type="checkbox"] {
+  background-color: var(--color-checkbox);
+  border-color: var(--color-checkbox);
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--color-violet);
+}
+
+
+input[type="checkbox"]:checked::after {
+  background-image: url('../../../assets/desktop/icon-check.svg');
+  background-position: center;
+}

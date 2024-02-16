@@ -1,0 +1,104 @@
+<div class="max-w-full w-[85%] md:w-[90%] lg:w-[58%] mt-10 h-auto mx-auto">
+    <div 
+        class="w-full tracking-wider text-center text-primary"
+        *ngIf="loading"
+    >
+        Loading... please wait
+    </div>
+    <div 
+        class="w-full my-20 text-center text-error"
+        *ngIf="error && !loading"
+    >
+        {{ error }}
+    </div>
+
+    <div
+        *ngIf="!loading && !error" 
+        class="relative w-full h-[220px] md:h-[120px] flex items-center flex-col md:flex-row justify-center md:justify-between text-center md:text-left gap-4 dets rounded-[6px] md:rounded-[10px] -mt-[70px] md:-mt-[80px] mb-10"
+    >
+        <div 
+            [style.background-color]="jobDetails.logoBackground"
+            class="absolute -top-6 rounded-[18px] md:rounded-bl-[10px] md:rounded-none w-[55px] md:w-[25%] lg:w-[20%] md:relative md:top-0 h-[50px] md:h-full flex items-center justify-center"
+        >
+            <img [src]="jobDetails.logo" class="md:w-[30%] lg:w-[40%]" alt="job.title">
+        </div>
+        <span class="md:w-[30%] mb-3 md:mb-0">
+            <h3 class="font-bold mb-3 md:mb-1">{{ jobDetails.company}}</h3>
+            <p>{{ extractDomainName(jobDetails.website) }}</p>
+        </span>
+        <button class="btn-secondary md:mr-10 lg:py-[12px]" (click)="redirect(jobDetails.website)">Company Site</button>
+    </div>
+
+    <div
+        *ngIf="!loading && !error"
+        class="w-full h-auto p-[8%] md:p-[5%] rounded-[6px] md:rounded-[10px] flex flex-col gap-8 info"
+    >
+        <div class="flex flex-col gap-8 md:flex-row md:justify-between md:items-center">
+            <div class="flex flex-col gap-[8px] md:gap-3">
+                <div class="flex items-center gap-2">
+                    <p class="tracking-wide">{{ jobDetails.postedAt }}</p>
+                    <span class="w-[5px] h-[5px] rounded-full bg-gray"></span>
+                    <p class="tracking-wide">{{ jobDetails.contract }}</p>
+                </div>
+                <h3 class="font-bold tracking-wide">{{ jobDetails.position }}</h3>
+                <h4 class="font-bold text-primary">{{ jobDetails.location }}</h4>
+            </div>
+            <button 
+                class="btn-primary md:py-[12px]" 
+                (click)="redirect(jobDetails.website)"
+            >
+                Apply Now
+            </button>
+        </div>
+
+        <p>
+            {{ jobDetails.description }}
+        </p>
+
+        <h3 class="font-bold">
+            Requirements
+        </h3>
+
+        <p>
+            {{ jobDetails.requirements.content }}
+        </p>
+        <ul class="text-base list-disc list-inside">
+            <li 
+                *ngFor="let list of jobDetails.requirements.items"
+                class="mb-4 text-darkGrey marker:text-primary"
+            >
+                {{ list }}
+            </li>
+        </ul>
+        <h3 class="font-bold">What You Will Do</h3>
+        <p>{{ jobDetails.role.content }}</p>
+        <ol class="text-base list-decimal list-inside">
+            <li 
+                class="text-darkGrey mb-4 marker:text-primary"
+                *ngFor="let list of jobDetails.role.items"
+            >
+                <p class="inline ml-[10px]">{{ list }}</p>
+            </li>
+        </ol>
+    </div>
+</div>
+
+<div 
+    *ngIf="!loading && !error"
+    class="dets mt-20 py-[6%] px-[8%] w-full md:p-[5%] lg:py-[3%] lg:px-0"
+>
+    <div class="lg:w-[58%] lg:mx-auto">
+        <div class="md:flex md:items-center md:justify-between">
+            <span class="hidden md:block">
+                <h3 class="font-bold mb-2">{{ jobDetails.position }}</h3>
+                <p>{{ jobDetails.company }}</p>
+            </span>
+            <button 
+                (click)="redirect(jobDetails.website)"
+                class="btn-primary w-full md:w-fit md:py-[12px]"
+            >
+                Apply Now
+            </button>
+        </div>
+    </div>
+</div>
