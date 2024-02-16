@@ -7,8 +7,7 @@ import { Jobs } from '../model/jobs';
   providedIn: 'root'
 })
 export class AllJobsService {
-
-  private devjobsUrl = 'http://localhost:3000/jobs'
+  private devjobsUrl = 'https://64281ee346fd35eb7c4bfc31.mockapi.io/dev'
   public isModalOpen: boolean = false 
 
   constructor(private http: HttpClient) { }
@@ -29,8 +28,6 @@ export class AllJobsService {
         `body was: ${error.error}` 
       )
     }
-    return throwError(()=> 
-      'Something went wrong while fetching jobs data. Please try again later.'
-    )
+    return throwError(()=> 'Something went wrong while fetching jobs data. Please try again later.')
   }
 }
