@@ -59,18 +59,12 @@
 </div>
 
 <div class="w-[85%] mx-auto my-16">
-    <div 
-        class="w-full tracking-wider text-center text-primary"
-        *ngIf="loading"
-    >
-        Loading... please wait
-    </div>
-    <div 
-        class="w-full my-20 text-center text-error"
-        *ngIf="error && !loading"
-    >
-        Something went wrong... failed to fetch resources
-    </div>
+    @if (loading && !error) {
+        <div class="w-full tracking-wider text-center text-primary">
+           Loading... please wait
+        </div>
+    }
+
     <div *ngIf="filterJobs" class="flex flex-wrap md:justify-between w-full h-auto">
         <div 
             *ngFor="let job of filteredJobs"
@@ -95,15 +89,20 @@
             <h4 class="text-primary font-bold">{{ job.location }}</h4>
         </div>
     </div>
+    
 
-    <div *ngIf="filterJobs">
-        <div
-            *ngIf="!loading && !error" 
-            class="flex items-center justify-center"
-        >
-            <button class="btn-primary">Load More</button>
+    @if (filteredJobs.length === 0 && !loading) {
+        <div class="text-error w-full text-center tracking-wide">
+            Whoops... 😒 No jobs found.
         </div>
-    </div>
+    } @else if (filteredJobs) {
+        @if (!loading && !error) {
+            <div class="flex items-center justify-center">
+                <button class="btn-primary">Load More</button>
+            </div>
+        }
+    }
+
 </div>
 
 <app-modal *ngIf="allJobsService.isModalOpen" (filterApplied)="applyFilters($event)"></app-modal>
