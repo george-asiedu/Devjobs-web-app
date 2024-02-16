@@ -25,16 +25,16 @@ export class HomeComponent implements OnInit {
   constructor (public allJobsService: AllJobsService) {}
 
   ngOnInit(): void {
-    this.allJobsService.getJobs().subscribe(
-      (job) => {
+    this.allJobsService.getJobs().subscribe({
+      next: (job) => {
         this.jobs = job
-        this.loading = false
         this.filteredJobs = job
+        this.loading = false 
+      },
+      error: (error) => {
+        this.error = error
+        this.loading = false
       }
-    ), 
-    ((err: any) => {
-      this.error = err
-      this.loading = false
     })
   }
 
