@@ -16,8 +16,12 @@
             >
         </div>
         <div class="w-full h-[60px] py-6 px-7 flex items-center gap-4">
-            <input type="checkbox" class="" [(ngModel)]="filterFullTime">
-            <h4>Full Time Only</h4>
+            <input 
+                type="checkbox"
+                class="peer relative appearance-none w-6 h-6 border rounded cursor-pointer focus:outline-none checked:bg-primary after:content-[''] after:w-full after:h-full after:absolute after:left-0 after:top-0 after:bg-no-repeat after:bg-center after:bg-[length:15px]"
+                [(ngModel)]="filterFullTime"
+            >
+            <h4 class="font-bold">Full Time Only</h4>
         </div>
         <div class="px-7">
             <button class="btn-primary w-full mt-3 py-[10px] rounded-[7px]" (click)="applyFilteredJobs()">Search</button>
