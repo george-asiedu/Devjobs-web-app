@@ -39,7 +39,7 @@ export class JobDetailsComponent implements OnInit {
         if (job) {
           this.jobDetails = job;
         } else {
-          this.error = 'Job not found';
+          this.error = 'Whoops... 😒 No jobs found.';
         }
         this.loading = false;
       },
