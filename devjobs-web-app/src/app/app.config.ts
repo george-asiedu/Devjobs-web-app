@@ -8,6 +8,6 @@ import { AllJobsService } from './service/all-jobs.service';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), provideAnimationsAsync(),
-    [provideHttpClient(), AllJobsService]
+    [provideHttpClient(), AllJobsService], provideAnimationsAsync()
   ]
 };
