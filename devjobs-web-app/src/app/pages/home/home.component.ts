@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  applyFilters(filters: { location: string, fullTime: boolean}): void {
+  applyFilters(filters: { location: string, fullTime: boolean }): void {
     this.filterLocation = filters.location
     this.fillterFullTime = filters.fullTime
     this.filterJobs()
